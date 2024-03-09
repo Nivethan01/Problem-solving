@@ -1,0 +1,33 @@
+
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc=new Scanner (System.in);
+	    ArrayList<Integer>ans=new ArrayList<>();
+	    System.out.print("Enter row:");
+	    int r=sc.nextInt();
+	    System.out.print("Enter col:");
+	    int c=sc.nextInt();
+	    int matrix[][]=new int[r][c];
+	    for(int i=0;i<r;i++){
+	        for(int j=0;j<c;j++){
+	            matrix[i][j]=sc.nextInt();
+	        }
+	    }
+	    System.out.print("-----------------");
+	     for (int i = 0; i < r; i++) {
+            if (i % 2 == 0) {
+                // Even rows - traverse left to right
+                for (int j = 0; j < c; j++) {
+                    System.out.print(matrix[i][j] + " ");
+                }
+            } else {
+                // Odd rows - traverse right to left
+                for (int j = c - 1; j >= 0; j--) {
+                    System.out.print(matrix[i][j] + " ");
+                }
+            }
+        }
+	}
+}
